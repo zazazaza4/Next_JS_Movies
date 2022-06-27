@@ -1,4 +1,4 @@
-const API_KEY = process.env.API_KEY;
+const API_KEY = 94f7bec1b91c0b7133e5fa7be293f498; // process.env.API_KEY;
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
