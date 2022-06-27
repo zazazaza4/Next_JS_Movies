@@ -25,7 +25,7 @@ export default function MovieSingle({ results }) {
 
     const truncate = (string, n) => string.length > 100 ? string.slice(0, n) + ' ...' : string;
 
-    const genresNames = genres.map(genre => genre.name);
+    const genresNames = genres ? genres.map(genre => genre.name) : [];
     return (
         <div className={'ada'}>
             <Head>
@@ -101,9 +101,8 @@ export default function MovieSingle({ results }) {
 }
 
 export async function getServerSideProps(context) {
-    console.log(context);
     const id = context.query['movie-id'];
-    const API_KEY = process.env.API_KEY;
+    const API_KEY = '94f7bec1b91c0b7133e5fa7be293f498';
 
     const request = await fetch(
         `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`)
